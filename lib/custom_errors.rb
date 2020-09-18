@@ -9,9 +9,12 @@ class Person
     self.partner = person
     if person.class != Person
       begin
-        raise PartnerError
-      rescue PartnerError => error
-        puts error.message
+        raise 'This exception will be rescued!'
+      rescue StandardError => e
+        puts "Rescued: #{e.inspect}"
+      #   raise PartnerError
+      # rescue PartnerError => error
+      #   puts error.message
       end
     else
       person.partner = self
