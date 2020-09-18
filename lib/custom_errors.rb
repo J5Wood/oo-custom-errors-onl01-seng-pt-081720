@@ -10,7 +10,7 @@ class Person
     if person.class != Person
       begin
         raise 'This exception will be rescued!'
-      rescue StandardError => e
+      rescue StandardError, AnotherError => e
         puts "Rescued: #{e.inspect}"
       #   raise PartnerError
       # rescue PartnerError => error
